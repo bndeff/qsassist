@@ -28,7 +28,7 @@ public class AssistantTileService extends TileService {
         try {
             Intent dismissNotificationShade = new Intent(Intent.ACTION_CLOSE_SYSTEM_DIALOGS);
             this.getApplicationContext().sendBroadcast(dismissNotificationShade);
-            SearchManager.class.getMethod("launchAssist", Bundle.class).invoke(searchManager, new Object[]{new Bundle()});
+            SearchManager.class.getMethod("launchAssist", Bundle.class).invoke(searchManager, new Bundle());
         } catch(NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
             Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
         }
